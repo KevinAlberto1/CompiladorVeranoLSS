@@ -1,0 +1,1133 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    AND
+    CLASS
+    CORCHETE_APERTURA
+    CORCHETE_CIERRE
+    DIVISION
+    ELSE
+    FOR
+    FUN
+    IF
+    IGUAL
+    LLAVE_APERTURA
+    LLAVE_CIERRE
+    MAYOR_IGUAL
+    MAYOR_QUE
+    MENOR_IGUAL
+    MENOR_QUE
+    MULTIPLICACION
+    NOT
+    OBJECT
+    OR
+    RESTA
+    RETURN
+    SUMA
+    VOID
+    WHILE
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> declaraciones
+Rule 2     declaraciones -> declaracion_variable declaraciones
+Rule 3     declaraciones -> declaracion_variable
+Rule 4     declaraciones -> declaracion_cad
+Rule 5     declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 6     declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+Rule 7     declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 8     declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 9     declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 10    declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 11    declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 12    declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+Rule 13    declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+Rule 14    declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+Rule 15    declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+Rule 16    caracteres_adicionales -> caracteres_adicionales CADENA
+Rule 17    caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO
+Rule 18    caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE
+Rule 19    caracteres_adicionales -> caracteres_adicionales ID
+Rule 20    caracteres_adicionales -> caracteres_adicionales PUNTO_COMA
+Rule 21    caracteres_adicionales -> caracteres_adicionales COMA
+Rule 22    caracteres_adicionales -> caracteres_adicionales ASIGNAR
+Rule 23    caracteres_adicionales -> CADENA
+Rule 24    caracteres_adicionales -> NUMERO_ENTERO
+Rule 25    caracteres_adicionales -> NUMERO_FLOTANTE
+Rule 26    caracteres_adicionales -> ID
+Rule 27    caracteres_adicionales -> PUNTO_COMA
+Rule 28    caracteres_adicionales -> COMA
+Rule 29    caracteres_adicionales -> ASIGNAR
+Rule 30    declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+Rule 31    declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato
+Rule 32    declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+Rule 33    declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+Rule 34    declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+Rule 35    declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA
+Rule 36    declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA
+Rule 37    declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA
+Rule 38    tipo_dato -> INT
+Rule 39    tipo_dato -> FLOAT
+Rule 40    tipo_dato -> BOOL
+Rule 41    tipo_dato -> STRING
+Rule 42    valor_dato -> NUMERO_ENTERO
+Rule 43    valor_dato -> NUMERO_FLOTANTE
+Rule 44    valor_dato -> TRUE
+Rule 45    valor_dato -> FALSE
+
+Terminals, with rules where they appear
+
+AND                  : 
+ASIGNAR              : 5 6 7 8 9 10 12 13 14 15 22 29 30 31 32 33 34 35 37
+BOOL                 : 40
+CADENA               : 5 6 7 8 9 10 11 13 14 15 16 23
+CLASS                : 
+COMA                 : 21 28
+COMILLAS_DOBLES      : 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 14 15
+CORCHETE_APERTURA    : 
+CORCHETE_CIERRE      : 
+DIVISION             : 
+ELSE                 : 
+FALSE                : 45
+FLOAT                : 39
+FOR                  : 
+FUN                  : 
+ID                   : 5 6 8 9 10 11 12 13 14 15 19 26 30 31 33 34 35 36 37
+IF                   : 
+IGUAL                : 
+INT                  : 38
+LLAVE_APERTURA       : 
+LLAVE_CIERRE         : 
+MAYOR_IGUAL          : 
+MAYOR_QUE            : 
+MENOR_IGUAL          : 
+MENOR_QUE            : 
+MULTIPLICACION       : 
+NOT                  : 
+NUMERO_ENTERO        : 17 24 42
+NUMERO_FLOTANTE      : 18 25 43
+OBJECT               : 
+OR                   : 
+PARENTESIS_APERTURA  : 5 6 7 9 10 11 12 13 14 15 30 31 32 34 35 36 37
+PARENTESIS_CIERRE    : 5 6 7 8 9 11 12 13 14 15 30 31 32 33 34 36 37
+PUNTO_COMA           : 5 7 8 9 10 11 12 13 14 20 27 30 32 33 34 35 36 37
+RESTA                : 
+RETURN               : 
+STRING               : 41
+SUMA                 : 
+TRUE                 : 44
+VOID                 : 
+WHILE                : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+caracteres_adicionales : 15 16 17 18 19 20 21 22
+declaracion_cad      : 4
+declaracion_variable : 2 3
+declaraciones        : 1 2
+programa             : 0
+tipo_dato            : 5 6 7 8 10 11 12 13 14 15 30 31 32 33 35 36 37
+valor_dato           : 30 31 32 33 34 35 36
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . programa
+    (1) programa -> . declaraciones
+    (2) declaraciones -> . declaracion_variable declaraciones
+    (3) declaraciones -> . declaracion_variable
+    (4) declaraciones -> . declaracion_cad
+    (30) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (31) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato
+    (32) declaracion_variable -> . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (33) declaracion_variable -> . ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (34) declaracion_variable -> . ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (35) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA
+    (36) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA
+    (37) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA
+    (5) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (7) declaracion_cad -> . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (8) declaracion_cad -> . ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (9) declaracion_cad -> . ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (10) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (11) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (12) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+
+    ID              shift and go to state 5
+    PARENTESIS_APERTURA shift and go to state 6
+
+    programa                       shift and go to state 1
+    declaraciones                  shift and go to state 2
+    declaracion_variable           shift and go to state 3
+    declaracion_cad                shift and go to state 4
+
+state 1
+
+    (0) S' -> programa .
+
+
+
+state 2
+
+    (1) programa -> declaraciones .
+
+    $end            reduce using rule 1 (programa -> declaraciones .)
+
+
+state 3
+
+    (2) declaraciones -> declaracion_variable . declaraciones
+    (3) declaraciones -> declaracion_variable .
+    (2) declaraciones -> . declaracion_variable declaraciones
+    (3) declaraciones -> . declaracion_variable
+    (4) declaraciones -> . declaracion_cad
+    (30) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (31) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato
+    (32) declaracion_variable -> . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (33) declaracion_variable -> . ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (34) declaracion_variable -> . ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (35) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA
+    (36) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA
+    (37) declaracion_variable -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA
+    (5) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (7) declaracion_cad -> . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (8) declaracion_cad -> . ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (9) declaracion_cad -> . ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (10) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (11) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (12) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> . ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+
+    $end            reduce using rule 3 (declaraciones -> declaracion_variable .)
+    ID              shift and go to state 5
+    PARENTESIS_APERTURA shift and go to state 6
+
+    declaracion_variable           shift and go to state 3
+    declaraciones                  shift and go to state 7
+    declaracion_cad                shift and go to state 4
+
+state 4
+
+    (4) declaraciones -> declaracion_cad .
+
+    $end            reduce using rule 4 (declaraciones -> declaracion_cad .)
+
+
+state 5
+
+    (30) declaracion_variable -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (31) declaracion_variable -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato
+    (33) declaracion_variable -> ID . tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (34) declaracion_variable -> ID . PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (35) declaracion_variable -> ID . PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA
+    (36) declaracion_variable -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA
+    (37) declaracion_variable -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA
+    (5) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (8) declaracion_cad -> ID . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (9) declaracion_cad -> ID . PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (10) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (11) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (12) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> ID . PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+    (38) tipo_dato -> . INT
+    (39) tipo_dato -> . FLOAT
+    (40) tipo_dato -> . BOOL
+    (41) tipo_dato -> . STRING
+
+    PARENTESIS_APERTURA shift and go to state 8
+    INT             shift and go to state 10
+    FLOAT           shift and go to state 11
+    BOOL            shift and go to state 12
+    STRING          shift and go to state 13
+
+    tipo_dato                      shift and go to state 9
+
+state 6
+
+    (32) declaracion_variable -> PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (7) declaracion_cad -> PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (38) tipo_dato -> . INT
+    (39) tipo_dato -> . FLOAT
+    (40) tipo_dato -> . BOOL
+    (41) tipo_dato -> . STRING
+
+    INT             shift and go to state 10
+    FLOAT           shift and go to state 11
+    BOOL            shift and go to state 12
+    STRING          shift and go to state 13
+
+    tipo_dato                      shift and go to state 14
+
+state 7
+
+    (2) declaraciones -> declaracion_variable declaraciones .
+
+    $end            reduce using rule 2 (declaraciones -> declaracion_variable declaraciones .)
+
+
+state 8
+
+    (30) declaracion_variable -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (31) declaracion_variable -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato
+    (34) declaracion_variable -> ID PARENTESIS_APERTURA . PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (35) declaracion_variable -> ID PARENTESIS_APERTURA . tipo_dato ASIGNAR valor_dato PUNTO_COMA
+    (36) declaracion_variable -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA
+    (37) declaracion_variable -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA . tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+    (38) tipo_dato -> . INT
+    (39) tipo_dato -> . FLOAT
+    (40) tipo_dato -> . BOOL
+    (41) tipo_dato -> . STRING
+
+    PARENTESIS_CIERRE shift and go to state 16
+    INT             shift and go to state 10
+    FLOAT           shift and go to state 11
+    BOOL            shift and go to state 12
+    STRING          shift and go to state 13
+
+    tipo_dato                      shift and go to state 15
+
+state 9
+
+    (33) declaracion_variable -> ID tipo_dato . PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (8) declaracion_cad -> ID tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    PARENTESIS_CIERRE shift and go to state 17
+
+
+state 10
+
+    (38) tipo_dato -> INT .
+
+    PARENTESIS_CIERRE reduce using rule 38 (tipo_dato -> INT .)
+    ASIGNAR         reduce using rule 38 (tipo_dato -> INT .)
+
+
+state 11
+
+    (39) tipo_dato -> FLOAT .
+
+    PARENTESIS_CIERRE reduce using rule 39 (tipo_dato -> FLOAT .)
+    ASIGNAR         reduce using rule 39 (tipo_dato -> FLOAT .)
+
+
+state 12
+
+    (40) tipo_dato -> BOOL .
+
+    PARENTESIS_CIERRE reduce using rule 40 (tipo_dato -> BOOL .)
+    ASIGNAR         reduce using rule 40 (tipo_dato -> BOOL .)
+
+
+state 13
+
+    (41) tipo_dato -> STRING .
+
+    PARENTESIS_CIERRE reduce using rule 41 (tipo_dato -> STRING .)
+    ASIGNAR         reduce using rule 41 (tipo_dato -> STRING .)
+
+
+state 14
+
+    (32) declaracion_variable -> PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    PARENTESIS_CIERRE shift and go to state 18
+
+
+state 15
+
+    (30) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA
+    (31) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR valor_dato
+    (35) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato . ASIGNAR valor_dato PUNTO_COMA
+    (36) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE valor_dato PUNTO_COMA
+    (37) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR PUNTO_COMA
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato . PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+
+    PARENTESIS_CIERRE shift and go to state 19
+    ASIGNAR         shift and go to state 20
+
+
+state 16
+
+    (34) declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE . ASIGNAR valor_dato PUNTO_COMA
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    ASIGNAR         shift and go to state 21
+
+
+state 17
+
+    (33) declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE . ASIGNAR valor_dato PUNTO_COMA
+    (8) declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    ASIGNAR         shift and go to state 22
+
+
+state 18
+
+    (32) declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR valor_dato PUNTO_COMA
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    ASIGNAR         shift and go to state 23
+
+
+state 19
+
+    (30) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR valor_dato PUNTO_COMA
+    (31) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR valor_dato
+    (36) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . valor_dato PUNTO_COMA
+    (37) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR PUNTO_COMA
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE . ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales
+    (42) valor_dato -> . NUMERO_ENTERO
+    (43) valor_dato -> . NUMERO_FLOTANTE
+    (44) valor_dato -> . TRUE
+    (45) valor_dato -> . FALSE
+
+    ASIGNAR         shift and go to state 24
+    COMILLAS_DOBLES shift and go to state 26
+    NUMERO_ENTERO   shift and go to state 27
+    NUMERO_FLOTANTE shift and go to state 28
+    TRUE            shift and go to state 29
+    FALSE           shift and go to state 30
+
+    valor_dato                     shift and go to state 25
+
+state 20
+
+    (35) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR . valor_dato PUNTO_COMA
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR . COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (42) valor_dato -> . NUMERO_ENTERO
+    (43) valor_dato -> . NUMERO_FLOTANTE
+    (44) valor_dato -> . TRUE
+    (45) valor_dato -> . FALSE
+
+    COMILLAS_DOBLES shift and go to state 32
+    NUMERO_ENTERO   shift and go to state 27
+    NUMERO_FLOTANTE shift and go to state 28
+    TRUE            shift and go to state 29
+    FALSE           shift and go to state 30
+
+    valor_dato                     shift and go to state 31
+
+state 21
+
+    (34) declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR . valor_dato PUNTO_COMA
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (42) valor_dato -> . NUMERO_ENTERO
+    (43) valor_dato -> . NUMERO_FLOTANTE
+    (44) valor_dato -> . TRUE
+    (45) valor_dato -> . FALSE
+
+    COMILLAS_DOBLES shift and go to state 34
+    NUMERO_ENTERO   shift and go to state 27
+    NUMERO_FLOTANTE shift and go to state 28
+    TRUE            shift and go to state 29
+    FALSE           shift and go to state 30
+
+    valor_dato                     shift and go to state 33
+
+state 22
+
+    (33) declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR . valor_dato PUNTO_COMA
+    (8) declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (42) valor_dato -> . NUMERO_ENTERO
+    (43) valor_dato -> . NUMERO_FLOTANTE
+    (44) valor_dato -> . TRUE
+    (45) valor_dato -> . FALSE
+
+    COMILLAS_DOBLES shift and go to state 36
+    NUMERO_ENTERO   shift and go to state 27
+    NUMERO_FLOTANTE shift and go to state 28
+    TRUE            shift and go to state 29
+    FALSE           shift and go to state 30
+
+    valor_dato                     shift and go to state 35
+
+state 23
+
+    (32) declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . valor_dato PUNTO_COMA
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (42) valor_dato -> . NUMERO_ENTERO
+    (43) valor_dato -> . NUMERO_FLOTANTE
+    (44) valor_dato -> . TRUE
+    (45) valor_dato -> . FALSE
+
+    COMILLAS_DOBLES shift and go to state 38
+    NUMERO_ENTERO   shift and go to state 27
+    NUMERO_FLOTANTE shift and go to state 28
+    TRUE            shift and go to state 29
+    FALSE           shift and go to state 30
+
+    valor_dato                     shift and go to state 37
+
+state 24
+
+    (30) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . valor_dato PUNTO_COMA
+    (31) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . valor_dato
+    (37) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . PUNTO_COMA
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA COMILLAS_DOBLES
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . CADENA COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA PUNTO_COMA
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR . COMILLAS_DOBLES CADENA caracteres_adicionales
+    (42) valor_dato -> . NUMERO_ENTERO
+    (43) valor_dato -> . NUMERO_FLOTANTE
+    (44) valor_dato -> . TRUE
+    (45) valor_dato -> . FALSE
+
+    PUNTO_COMA      shift and go to state 40
+    COMILLAS_DOBLES shift and go to state 41
+    CADENA          shift and go to state 42
+    NUMERO_ENTERO   shift and go to state 27
+    NUMERO_FLOTANTE shift and go to state 28
+    TRUE            shift and go to state 29
+    FALSE           shift and go to state 30
+
+    valor_dato                     shift and go to state 39
+
+state 25
+
+    (36) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 43
+
+
+state 26
+
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES . CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    CADENA          shift and go to state 44
+
+
+state 27
+
+    (42) valor_dato -> NUMERO_ENTERO .
+
+    PUNTO_COMA      reduce using rule 42 (valor_dato -> NUMERO_ENTERO .)
+    ID              reduce using rule 42 (valor_dato -> NUMERO_ENTERO .)
+    PARENTESIS_APERTURA reduce using rule 42 (valor_dato -> NUMERO_ENTERO .)
+    $end            reduce using rule 42 (valor_dato -> NUMERO_ENTERO .)
+
+
+state 28
+
+    (43) valor_dato -> NUMERO_FLOTANTE .
+
+    PUNTO_COMA      reduce using rule 43 (valor_dato -> NUMERO_FLOTANTE .)
+    ID              reduce using rule 43 (valor_dato -> NUMERO_FLOTANTE .)
+    PARENTESIS_APERTURA reduce using rule 43 (valor_dato -> NUMERO_FLOTANTE .)
+    $end            reduce using rule 43 (valor_dato -> NUMERO_FLOTANTE .)
+
+
+state 29
+
+    (44) valor_dato -> TRUE .
+
+    PUNTO_COMA      reduce using rule 44 (valor_dato -> TRUE .)
+    ID              reduce using rule 44 (valor_dato -> TRUE .)
+    PARENTESIS_APERTURA reduce using rule 44 (valor_dato -> TRUE .)
+    $end            reduce using rule 44 (valor_dato -> TRUE .)
+
+
+state 30
+
+    (45) valor_dato -> FALSE .
+
+    PUNTO_COMA      reduce using rule 45 (valor_dato -> FALSE .)
+    ID              reduce using rule 45 (valor_dato -> FALSE .)
+    PARENTESIS_APERTURA reduce using rule 45 (valor_dato -> FALSE .)
+    $end            reduce using rule 45 (valor_dato -> FALSE .)
+
+
+state 31
+
+    (35) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 45
+
+
+state 32
+
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES . CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    CADENA          shift and go to state 46
+
+
+state 33
+
+    (34) declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 47
+
+
+state 34
+
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    CADENA          shift and go to state 48
+
+
+state 35
+
+    (33) declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 49
+
+
+state 36
+
+    (8) declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    CADENA          shift and go to state 50
+
+
+state 37
+
+    (32) declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 51
+
+
+state 38
+
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA COMILLAS_DOBLES PUNTO_COMA
+
+    CADENA          shift and go to state 52
+
+
+state 39
+
+    (30) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato . PUNTO_COMA
+    (31) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato .
+
+    PUNTO_COMA      shift and go to state 53
+    ID              reduce using rule 31 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato .)
+    PARENTESIS_APERTURA reduce using rule 31 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato .)
+    $end            reduce using rule 31 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato .)
+
+
+state 40
+
+    (37) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA .
+
+    ID              reduce using rule 37 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 37 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA .)
+    $end            reduce using rule 37 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR PUNTO_COMA .)
+
+
+state 41
+
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA COMILLAS_DOBLES
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . COMILLAS_DOBLES PUNTO_COMA
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA PUNTO_COMA
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES . CADENA caracteres_adicionales
+
+    CADENA          shift and go to state 55
+    COMILLAS_DOBLES shift and go to state 54
+
+
+state 42
+
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA . COMILLAS_DOBLES PUNTO_COMA
+
+    COMILLAS_DOBLES shift and go to state 56
+
+
+state 43
+
+    (36) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA .
+
+    ID              reduce using rule 36 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 36 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA .)
+    $end            reduce using rule 36 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE valor_dato PUNTO_COMA .)
+
+
+state 44
+
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA . COMILLAS_DOBLES PUNTO_COMA
+
+    COMILLAS_DOBLES shift and go to state 57
+
+
+state 45
+
+    (35) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA .
+
+    ID              reduce using rule 35 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 35 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA .)
+    $end            reduce using rule 35 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR valor_dato PUNTO_COMA .)
+
+
+state 46
+
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA . COMILLAS_DOBLES PUNTO_COMA
+
+    COMILLAS_DOBLES shift and go to state 58
+
+
+state 47
+
+    (34) declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .
+
+    ID              reduce using rule 34 (declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 34 (declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    $end            reduce using rule 34 (declaracion_variable -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+
+
+state 48
+
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . COMILLAS_DOBLES PUNTO_COMA
+
+    COMILLAS_DOBLES shift and go to state 59
+
+
+state 49
+
+    (33) declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .
+
+    ID              reduce using rule 33 (declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 33 (declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    $end            reduce using rule 33 (declaracion_variable -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+
+
+state 50
+
+    (8) declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . COMILLAS_DOBLES PUNTO_COMA
+
+    COMILLAS_DOBLES shift and go to state 60
+
+
+state 51
+
+    (32) declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .
+
+    ID              reduce using rule 32 (declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 32 (declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    $end            reduce using rule 32 (declaracion_variable -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+
+
+state 52
+
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . COMILLAS_DOBLES PUNTO_COMA
+
+    COMILLAS_DOBLES shift and go to state 61
+
+
+state 53
+
+    (30) declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .
+
+    ID              reduce using rule 30 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    PARENTESIS_APERTURA reduce using rule 30 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+    $end            reduce using rule 30 (declaracion_variable -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR valor_dato PUNTO_COMA .)
+
+
+state 54
+
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 62
+
+
+state 55
+
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . COMILLAS_DOBLES PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . COMILLAS_DOBLES
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . PUNTO_COMA
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA . caracteres_adicionales
+    (16) caracteres_adicionales -> . caracteres_adicionales CADENA
+    (17) caracteres_adicionales -> . caracteres_adicionales NUMERO_ENTERO
+    (18) caracteres_adicionales -> . caracteres_adicionales NUMERO_FLOTANTE
+    (19) caracteres_adicionales -> . caracteres_adicionales ID
+    (20) caracteres_adicionales -> . caracteres_adicionales PUNTO_COMA
+    (21) caracteres_adicionales -> . caracteres_adicionales COMA
+    (22) caracteres_adicionales -> . caracteres_adicionales ASIGNAR
+    (23) caracteres_adicionales -> . CADENA
+    (24) caracteres_adicionales -> . NUMERO_ENTERO
+    (25) caracteres_adicionales -> . NUMERO_FLOTANTE
+    (26) caracteres_adicionales -> . ID
+    (27) caracteres_adicionales -> . PUNTO_COMA
+    (28) caracteres_adicionales -> . COMA
+    (29) caracteres_adicionales -> . ASIGNAR
+
+    COMILLAS_DOBLES shift and go to state 65
+    PUNTO_COMA      shift and go to state 67
+    CADENA          shift and go to state 66
+    NUMERO_ENTERO   shift and go to state 69
+    NUMERO_FLOTANTE shift and go to state 70
+    ID              shift and go to state 63
+    COMA            shift and go to state 71
+    ASIGNAR         shift and go to state 64
+
+    caracteres_adicionales         shift and go to state 68
+
+state 56
+
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 72
+
+
+state 57
+
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 73
+
+
+state 58
+
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 74
+
+
+state 59
+
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 75
+
+
+state 60
+
+    (8) declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 76
+
+
+state 61
+
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 77
+
+
+state 62
+
+    (12) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 12 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 63
+
+    (26) caracteres_adicionales -> ID .
+
+    CADENA          reduce using rule 26 (caracteres_adicionales -> ID .)
+    NUMERO_ENTERO   reduce using rule 26 (caracteres_adicionales -> ID .)
+    NUMERO_FLOTANTE reduce using rule 26 (caracteres_adicionales -> ID .)
+    ID              reduce using rule 26 (caracteres_adicionales -> ID .)
+    PUNTO_COMA      reduce using rule 26 (caracteres_adicionales -> ID .)
+    COMA            reduce using rule 26 (caracteres_adicionales -> ID .)
+    ASIGNAR         reduce using rule 26 (caracteres_adicionales -> ID .)
+    $end            reduce using rule 26 (caracteres_adicionales -> ID .)
+
+
+state 64
+
+    (29) caracteres_adicionales -> ASIGNAR .
+
+    CADENA          reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    NUMERO_ENTERO   reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    NUMERO_FLOTANTE reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    ID              reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    PUNTO_COMA      reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    COMA            reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    ASIGNAR         reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+    $end            reduce using rule 29 (caracteres_adicionales -> ASIGNAR .)
+
+
+state 65
+
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES . PUNTO_COMA
+    (6) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES .
+
+    PUNTO_COMA      shift and go to state 78
+    $end            reduce using rule 6 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES .)
+
+
+state 66
+
+    (23) caracteres_adicionales -> CADENA .
+
+    CADENA          reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    NUMERO_ENTERO   reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    NUMERO_FLOTANTE reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    ID              reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    PUNTO_COMA      reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    COMA            reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    ASIGNAR         reduce using rule 23 (caracteres_adicionales -> CADENA .)
+    $end            reduce using rule 23 (caracteres_adicionales -> CADENA .)
+
+
+state 67
+
+    (14) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA .
+    (27) caracteres_adicionales -> PUNTO_COMA .
+
+  ! reduce/reduce conflict for $end resolved using rule 14 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA .)
+    $end            reduce using rule 14 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA .)
+    CADENA          reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+    NUMERO_ENTERO   reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+    NUMERO_FLOTANTE reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+    ID              reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+    PUNTO_COMA      reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+    COMA            reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+    ASIGNAR         reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .)
+
+  ! $end            [ reduce using rule 27 (caracteres_adicionales -> PUNTO_COMA .) ]
+
+
+state 68
+
+    (15) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales .
+    (16) caracteres_adicionales -> caracteres_adicionales . CADENA
+    (17) caracteres_adicionales -> caracteres_adicionales . NUMERO_ENTERO
+    (18) caracteres_adicionales -> caracteres_adicionales . NUMERO_FLOTANTE
+    (19) caracteres_adicionales -> caracteres_adicionales . ID
+    (20) caracteres_adicionales -> caracteres_adicionales . PUNTO_COMA
+    (21) caracteres_adicionales -> caracteres_adicionales . COMA
+    (22) caracteres_adicionales -> caracteres_adicionales . ASIGNAR
+
+    $end            reduce using rule 15 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA caracteres_adicionales .)
+    CADENA          shift and go to state 81
+    NUMERO_ENTERO   shift and go to state 82
+    NUMERO_FLOTANTE shift and go to state 83
+    ID              shift and go to state 79
+    PUNTO_COMA      shift and go to state 84
+    COMA            shift and go to state 85
+    ASIGNAR         shift and go to state 80
+
+
+state 69
+
+    (24) caracteres_adicionales -> NUMERO_ENTERO .
+
+    CADENA          reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    NUMERO_ENTERO   reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    NUMERO_FLOTANTE reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    ID              reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    PUNTO_COMA      reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    COMA            reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    ASIGNAR         reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+    $end            reduce using rule 24 (caracteres_adicionales -> NUMERO_ENTERO .)
+
+
+state 70
+
+    (25) caracteres_adicionales -> NUMERO_FLOTANTE .
+
+    CADENA          reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    NUMERO_ENTERO   reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    NUMERO_FLOTANTE reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    ID              reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    PUNTO_COMA      reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    COMA            reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    ASIGNAR         reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+    $end            reduce using rule 25 (caracteres_adicionales -> NUMERO_FLOTANTE .)
+
+
+state 71
+
+    (28) caracteres_adicionales -> COMA .
+
+    CADENA          reduce using rule 28 (caracteres_adicionales -> COMA .)
+    NUMERO_ENTERO   reduce using rule 28 (caracteres_adicionales -> COMA .)
+    NUMERO_FLOTANTE reduce using rule 28 (caracteres_adicionales -> COMA .)
+    ID              reduce using rule 28 (caracteres_adicionales -> COMA .)
+    PUNTO_COMA      reduce using rule 28 (caracteres_adicionales -> COMA .)
+    COMA            reduce using rule 28 (caracteres_adicionales -> COMA .)
+    ASIGNAR         reduce using rule 28 (caracteres_adicionales -> COMA .)
+    $end            reduce using rule 28 (caracteres_adicionales -> COMA .)
+
+
+state 72
+
+    (13) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 13 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 73
+
+    (11) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 11 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 74
+
+    (10) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 10 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 75
+
+    (9) declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 9 (declaracion_cad -> ID PARENTESIS_APERTURA PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 76
+
+    (8) declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 8 (declaracion_cad -> ID tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 77
+
+    (7) declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 7 (declaracion_cad -> PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 78
+
+    (5) declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .
+
+    $end            reduce using rule 5 (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA COMILLAS_DOBLES PUNTO_COMA .)
+
+
+state 79
+
+    (19) caracteres_adicionales -> caracteres_adicionales ID .
+
+    CADENA          reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    NUMERO_ENTERO   reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    NUMERO_FLOTANTE reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    ID              reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    PUNTO_COMA      reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    COMA            reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    ASIGNAR         reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+    $end            reduce using rule 19 (caracteres_adicionales -> caracteres_adicionales ID .)
+
+
+state 80
+
+    (22) caracteres_adicionales -> caracteres_adicionales ASIGNAR .
+
+    CADENA          reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    NUMERO_ENTERO   reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    NUMERO_FLOTANTE reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    ID              reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    PUNTO_COMA      reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    COMA            reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    ASIGNAR         reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+    $end            reduce using rule 22 (caracteres_adicionales -> caracteres_adicionales ASIGNAR .)
+
+
+state 81
+
+    (16) caracteres_adicionales -> caracteres_adicionales CADENA .
+
+    CADENA          reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    NUMERO_ENTERO   reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    NUMERO_FLOTANTE reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    ID              reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    PUNTO_COMA      reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    COMA            reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    ASIGNAR         reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+    $end            reduce using rule 16 (caracteres_adicionales -> caracteres_adicionales CADENA .)
+
+
+state 82
+
+    (17) caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .
+
+    CADENA          reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    NUMERO_ENTERO   reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    NUMERO_FLOTANTE reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    ID              reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    PUNTO_COMA      reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    COMA            reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    ASIGNAR         reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+    $end            reduce using rule 17 (caracteres_adicionales -> caracteres_adicionales NUMERO_ENTERO .)
+
+
+state 83
+
+    (18) caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .
+
+    CADENA          reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    NUMERO_ENTERO   reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    NUMERO_FLOTANTE reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    ID              reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    PUNTO_COMA      reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    COMA            reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    ASIGNAR         reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+    $end            reduce using rule 18 (caracteres_adicionales -> caracteres_adicionales NUMERO_FLOTANTE .)
+
+
+state 84
+
+    (20) caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .
+
+    CADENA          reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    NUMERO_ENTERO   reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    NUMERO_FLOTANTE reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    ID              reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    PUNTO_COMA      reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    COMA            reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    ASIGNAR         reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+    $end            reduce using rule 20 (caracteres_adicionales -> caracteres_adicionales PUNTO_COMA .)
+
+
+state 85
+
+    (21) caracteres_adicionales -> caracteres_adicionales COMA .
+
+    CADENA          reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    NUMERO_ENTERO   reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    NUMERO_FLOTANTE reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    ID              reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    PUNTO_COMA      reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    COMA            reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    ASIGNAR         reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+    $end            reduce using rule 21 (caracteres_adicionales -> caracteres_adicionales COMA .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: reduce/reduce conflict in state 67 resolved using rule (declaracion_cad -> ID PARENTESIS_APERTURA tipo_dato PARENTESIS_CIERRE ASIGNAR COMILLAS_DOBLES CADENA PUNTO_COMA)
+WARNING: rejected rule (caracteres_adicionales -> PUNTO_COMA) in state 67
